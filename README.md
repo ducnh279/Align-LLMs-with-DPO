@@ -1,7 +1,7 @@
 # Align LLMs with DPO
 
 ## Overview
-This repository contains an implementation of Direct Preference Optimization (DPO) loss from scratch. The model is fine-tuned on 2,000 training examples, sampled from the UltraFeedback Binarized preference dataset. The training process is executed using a vanilla PyTorch training loop.
+This repository contains an implementation of Direct Preference Optimization (DPO) loss from scratch. The model is fine-tuned on 500 training examples, sampled from the UltraFeedback Binarized preference dataset. The training process is executed using a vanilla PyTorch training loop.
 
 ## Model Training
 - When tuning hyperparameters, it's crucial to remember that the effectiveness of certain values may vary depending on your specific setup. For example, in my setup, a beta value of 0.1 yields better results compared to 0.2. Similarly, setting weight decay to a lower value and ensuring that the longer the sequence length, the better. I suggest treating these values as initial benchmarks and fine-tuning them to align with your setup for optimal results.
@@ -11,7 +11,7 @@ The DPO model is trained with the following config:
   - Epochs: 1
   - Batch Size: 1
   - Gradient Accumulation Steps: 2
-  - Learning Rate: 5e-7
+  - Learning Rate: 1e-7
   - Learning Rate Decay: Cosine
   - Weight Decay: 1e-2
     
